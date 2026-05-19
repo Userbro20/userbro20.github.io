@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rafff Dev Console</title>
+  <link rel="stylesheet" href="./dev.css?v=20260519-dev10">
+  <script src="./dev.js?v=20260519-dev10" defer></script>
+</head>
+<body>
+  <section id="lockscreen" class="lockscreen">
+    <div class="lockcard">
+      <p class="eyebrow">RAFFF DEV PANEL</p>
+      <h1>Enter Dev PIN</h1>
+      <p class="sub">This panel can execute shell commands on your bot host.</p>
+      <div class="pin-row" id="pinRow">
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      </div>
+      <p id="lockMessage" class="lock-message">Locked</p>
+      <div class="pad">
+        <button data-key="1">1</button><button data-key="2">2</button><button data-key="3">3</button>
+        <button data-key="4">4</button><button data-key="5">5</button><button data-key="6">6</button>
+        <button data-key="7">7</button><button data-key="8">8</button><button data-key="9">9</button>
+        <button data-action="clear">Clear</button><button data-key="0">0</button><button data-action="back">Back</button>
+      </div>
+      <button id="unlockBtn" class="unlock">Unlock</button>
+    </div>
+  </section>
+
+  <main id="app" class="app hidden">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">RAFFF DEV PANEL</p>
+        <h2>Remote Bot Console</h2>
+      </div>
+      <div class="status-wrap">
+        <span id="status" class="status offline">Offline</span>
+        <button id="reconnectBtn">Reconnect</button>
+      </div>
+    </header>
+
+    <section class="terminal-shell">
+      <pre id="terminalOutput" class="output"></pre>
+      <div class="input-row">
+        <span class="prompt">$</span>
+        <input id="terminalInput" type="text" autocomplete="off" spellcheck="false" placeholder="Type a command and press Enter">
+        <button id="sendBtn">Run</button>
+        <button id="ctrlCBtn">Ctrl+C</button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
